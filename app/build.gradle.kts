@@ -8,7 +8,7 @@ plugins {
 
 android {
     namespace = "com.example.pepto"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.pepto"
@@ -119,10 +119,6 @@ dependencies {
     implementation(libs.play.services.location)
     implementation(libs.accompanist.permissions)
 
-    //Supabase
-    implementation(libs.supabase.kt)
-    implementation(libs.supabase.gotrue.kt)
-
     //Skydoves
     implementation(libs.cloudy)
 
@@ -138,7 +134,8 @@ dependencies {
     // Required serialization
     implementation(libs.kotlinx.serialization.json)
 
-    implementation(libs.firebase.appcheck.safetynet)
+    implementation(libs.firebase.appcheck.ktx)
+    implementation(libs.firebase.appcheck.playintegrity)
 
     // logging interceptor
     implementation(libs.okhttp.logging.interceptor)

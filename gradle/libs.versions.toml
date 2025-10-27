@@ -1,3 +1,4 @@
+
 [versions]
 agp = "8.12.0"
 kotlin = "2.0.21"
@@ -9,10 +10,6 @@ espressoCore = "3.7.0"
 lifecycleRuntimeKtx = "2.9.4"
 activityCompose = "1.11.0"
 composeBom = "2024.09.00"
-playServicesAuth = "21.3.0"
-firebaseFirestoreKtx = "25.1.2"
-firebaseAuthKtx = "23.2.0"
-firebaseAppcheckKtx = "18.0.0"
 volley = "1.2.1"
 appcompat = "1.7.0"
 material = "1.12.0"
@@ -30,12 +27,10 @@ hiltLifecycle = "1.0.0-alpha03"
 retrofit = "2.11.0"
 playServicesLocation = "21.3.0"
 accompanistPermissions = "0.35.1-alpha"
-supabase = "2.5.0"
 cloudy = "0.1.2"
 ktor = "2.3.12"
 razorpayCheckout = "1.6.36"
 kotlinxSerializationJson = "1.7.0"
-firebaseAppcheckSafetynet = "18.0.0"
 okhttpLoggingInterceptor = "4.12.0"
 googleFonts = "1.6.0"
 
@@ -54,10 +49,11 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
-play-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "playServicesAuth" }
-firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
-firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
-firebase-appcheck-ktx = { group = "com.google.firebase", name = "firebase-appcheck-ktx", version.ref = "firebaseAppcheckKtx" }
+play-services-auth = { group = "com.google.android.gms", name = "play-services-auth" }
+firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx" }
+firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx" }
+firebase-appcheck-ktx = { group = "com.google.firebase", name = "firebase-appcheck-ktx" }
+firebase-appcheck-playintegrity = { group = "com.google.firebase", name = "firebase-appcheck-playintegrity"}
 volley = { group = "com.android.volley", name = "volley", version.ref = "volley" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
@@ -81,8 +77,6 @@ retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = 
 retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
 accompanist-permissions = { group = "com.google.accompanist", name = "accompanist-permissions", version.ref = "accompanistPermissions" }
-supabase-kt = { group = "io.github.jan-tennert", name = "supabase-kt", version.ref = "supabase" }
-supabase-gotrue-kt = { group = "io.github.jan-tennert.supabase", name = "gotrue-kt", version.ref = "supabase" }
 cloudy = { group = "com.github.skydoves", name = "cloudy", version.ref = "cloudy" }
 ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
 ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio", version.ref = "ktor" }
@@ -90,7 +84,6 @@ ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-conte
 ktor-serialization-kotlinx-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
 razorpay-checkout = { group = "com.razorpay", name = "checkout", version.ref = "razorpayCheckout" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
-firebase-appcheck-safetynet = { group = "com.google.firebase", name = "firebase-appcheck-safetynet", version.ref = "firebaseAppcheckSafetynet" }
 okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttpLoggingInterceptor" }
 
 [plugins]
