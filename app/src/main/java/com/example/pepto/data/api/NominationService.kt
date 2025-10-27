@@ -13,6 +13,7 @@ interface  NominationService{
         @Query("format") format :String = "json",
         @Query("adressdetails") addressDetails : Int = 1,
         @Header ("User-Agent") userAgent :String = "Pepto/1.0(adityakuamr8018@gmail.com)"
+
     ) : NominationResponse
 
     @GET("search")

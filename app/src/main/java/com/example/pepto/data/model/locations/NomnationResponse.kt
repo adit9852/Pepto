@@ -3,7 +3,7 @@ package com.example.pepto.data.model.locations
 data class NominationResponse(
     val place_id: Long? = null,
     val licence: String? = null,
-    val osm_type: String? = null,
+      val osm_type: String? = null,
     val osm_id: Long? = null,
     val lat: String? = null,
     val lon: String? = null,
