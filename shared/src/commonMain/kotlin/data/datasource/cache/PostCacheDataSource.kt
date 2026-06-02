@@ -18,8 +18,8 @@ package data.datasource.cache
 import app.cash.sqldelight.coroutines.asFlow
 import app.cash.sqldelight.coroutines.mapToList
 import data.model.Post
-import dev.shreyaspatil.foodium.db.FoodiumDb
-import dev.shreyaspatil.foodium.db.Posts
+import dev.shreyaspatil.pepto.db.PeptoDb
+import dev.shreyaspatil.pepto.db.Posts
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -29,7 +29,7 @@ import kotlinx.coroutines.withContext
  * Source of truth for data of Posts from cache
  */
 class PostCacheDataSource(
-    private val db: FoodiumDb,
+    private val db: PeptoDb,
     private val ioDispatcher: CoroutineDispatcher,
 ) {
     /**

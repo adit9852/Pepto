@@ -15,17 +15,17 @@
  */
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
-import navigation.FoodiumNavGraph
-import ui.theme.FoodiumTheme
+import navigation.PeptoNavGraph
+import ui.theme.PeptoTheme
 
 /**
  * Entry point of the application.
  */
 @Composable
 fun App() {
-    FoodiumTheme {
+    PeptoTheme {
         Surface {
-            FoodiumNavGraph()
+            PeptoNavGraph()
         }
     }
 }

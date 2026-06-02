@@ -33,7 +33,7 @@ package navigation
 import androidx.compose.runtime.Immutable
 
 /**
- * Screens used in the Foodium app
+ * Screens used in the Pepto app
  */
 @Immutable
 sealed interface Screen {

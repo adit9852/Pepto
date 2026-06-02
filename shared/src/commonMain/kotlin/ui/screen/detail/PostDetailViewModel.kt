@@ -42,6 +42,7 @@ class PostDetailViewModel(
             if (post != null) {
                 _state.post = post.let {
                     PostDetailState.Post(
+                        id = it.id,
                         title = it.title,
                         content = it.body,
                         author = it.author,

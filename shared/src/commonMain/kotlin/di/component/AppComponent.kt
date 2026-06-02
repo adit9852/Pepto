@@ -18,7 +18,7 @@ package di.component
 import data.datasource.cache.PostCacheDataSource
 import data.datasource.remote.PostRemoteDataSource
 import data.repository.impl.PostRepositoryImpl
-import dev.shreyaspatil.foodium.db.FoodiumDb
+import dev.shreyaspatil.pepto.db.PeptoDb
 import di.SqlDriverFactory
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -71,11 +71,11 @@ internal class DefaultAppComponent(private val appContext: AppContext) : AppComp
     private val remoteDataSource by lazy { PostRemoteDataSource(provideHttpClient()) }
     private val cacheDataSource by lazy {
         PostCacheDataSource(
-            db = foodiumDb,
+            db = peptoDb,
             ioDispatcher = Dispatchers.IO,
         )
     }
-    private val foodiumDb by lazy { FoodiumDb(provideDriverFactory(appContext).create()) }
+    private val peptoDb by lazy { PeptoDb(provideDriverFactory(appContext).create()) }
 
     private fun provideHttpClient(): HttpClient = HttpClient {
         install(ContentNegotiation) {

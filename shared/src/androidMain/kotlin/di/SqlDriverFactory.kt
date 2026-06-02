@@ -18,10 +18,10 @@ package di
 import android.content.Context
 import app.cash.sqldelight.db.SqlDriver
 import app.cash.sqldelight.driver.android.AndroidSqliteDriver
-import dev.shreyaspatil.foodium.db.FoodiumDb
+import dev.shreyaspatil.pepto.db.PeptoDb
 
 actual class SqlDriverFactory(private val context: Context) {
     actual fun create(): SqlDriver {
-        return AndroidSqliteDriver(FoodiumDb.Schema, context, "foodium.db")
+        return AndroidSqliteDriver(PeptoDb.Schema, context, "pepto.db")
     }
 }

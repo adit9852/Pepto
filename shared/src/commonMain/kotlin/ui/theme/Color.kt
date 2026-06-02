@@ -19,14 +19,46 @@ import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.ui.graphics.Color
 
+// Brand palette (Pepto)
+val PeptoRed = Color(0xFFE23744)
+val PeptoRedDark = Color(0xFFC1232F)
+val PeptoOrange = Color(0xFFFF7E5F)
+val RatingGreen = Color(0xFF267E3E)
+val SaffronYellow = Color(0xFFF5A623)
+
+// Light neutrals
+val LightBackground = Color(0xFFF6F6F8)
+val LightSurface = Color(0xFFFFFFFF)
+val LightOnSurface = Color(0xFF1C1C1E)
+val LightSubtle = Color(0xFF6E6E73)
+
+// Dark neutrals
+val DarkBackground = Color(0xFF0F0F11)
+val DarkSurface = Color(0xFF1B1B1F)
+val DarkOnSurface = Color(0xFFF2F2F5)
+val DarkSubtle = Color(0xFF9A9AA2)
+
 val lightColors = lightColors(
-    primary = Color.Black,
-    surface = Color(0xFFF3F3F3),
-    background = Color(0xFFF3F3F3),
+    primary = PeptoRed,
+    primaryVariant = PeptoRedDark,
+    secondary = PeptoOrange,
+    secondaryVariant = PeptoOrange,
+    background = LightBackground,
+    surface = LightSurface,
+    onPrimary = Color.White,
+    onSecondary = Color.White,
+    onBackground = LightOnSurface,
+    onSurface = LightOnSurface,
 )
 
 val darkColors = darkColors(
-    primary = Color(0xFF002022),
-    surface = Color(0xFF001719),
-    background = Color(0xFF001719),
+    primary = PeptoRed,
+    primaryVariant = PeptoRedDark,
+    secondary = PeptoOrange,
+    background = DarkBackground,
+    surface = DarkSurface,
+    onPrimary = Color.White,
+    onSecondary = Color.White,
+    onBackground = DarkOnSurface,
+    onSurface = DarkOnSurface,
 )

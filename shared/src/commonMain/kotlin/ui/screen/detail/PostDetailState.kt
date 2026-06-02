@@ -26,5 +26,11 @@ interface PostDetailState {
     val errorMessage: String?
 
     @Immutable
-    data class Post(val title: String, val content: String, val author: String, val imageUrl: String?)
+    data class Post(
+        val id: Int,
+        val title: String,
+        val content: String,
+        val author: String,
+        val imageUrl: String?,
+    )
 }

@@ -1,4 +1,4 @@
-rootProject.name = "Foodium-KMM"
+rootProject.name = "Pepto-KMM"
 
 include(":androidApp")
 include(":shared")

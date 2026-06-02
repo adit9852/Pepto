@@ -17,27 +17,40 @@ package ui.screen.detail
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.ScrollState
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.requiredHeightIn
-import androidx.compose.foundation.layout.requiredWidthIn
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
+import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBackIosNew
+import androidx.compose.material.icons.filled.FavoriteBorder
+import androidx.compose.material.icons.filled.LocalOffer
+import androidx.compose.material.icons.filled.Place
+import androidx.compose.material.icons.filled.Payments
+import androidx.compose.material.icons.filled.Schedule
+import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.collectAsState
@@ -47,9 +60,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
@@ -57,6 +71,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ui.component.ErrorContent
 import ui.component.PostGraphicImage
+import ui.component.RatingBadge
+import ui.theme.PeptoOrange
+import ui.theme.RatingGreen
+import ui.theme.SaffronYellow
+import ui.util.FoodMeta
+import ui.util.foodMetaFor
 import utils.accompanist.placeholder.PlaceholderHighlight
 import utils.accompanist.placeholder.placeholder
 import utils.accompanist.placeholder.shimmer
@@ -84,6 +104,7 @@ fun PostDetailContent(
     onBackClick: () -> Unit,
 ) {
     val scrollState = rememberScrollState()
+    val meta = post?.let { foodMetaFor(it.id) }
 
     Scaffold(
         topBar = {
@@ -98,6 +119,11 @@ fun PostDetailContent(
                 ),
             )
         },
+        bottomBar = {
+            if (!isLoading && errorMessage == null && meta != null) {
+                AddToCartBar(price = meta.priceForTwo)
+            }
+        },
     ) {
         BoxWithConstraints(Modifier.fillMaxSize()) {
             val bodyMinHeight = remember(maxHeight) { maxHeight + 250.dp }
@@ -111,11 +137,12 @@ fun PostDetailContent(
                 if (errorMessage != null) {
                     ErrorContent(errorMessage)
                 } else {
-                    PostDetailContent(
+                    PostDetailBody(
                         isLoading = isLoading,
                         title = post?.title ?: "",
                         author = post?.author ?: "",
                         content = post?.content ?: "",
+                        meta = meta,
                         modifier = Modifier.padding(16.dp).heightIn(min = bodyMinHeight),
                     )
                 }
@@ -132,7 +159,7 @@ private fun TopBarContent(
     onBackClick: () -> Unit,
     modifier: Modifier,
 ) {
-    val imageHeight by animateSizePerScrollState(250.dp, scrollState)
+    val imageHeight by animateSizePerScrollState(280.dp, scrollState)
     val alphaPerScroll by animateAlphaPerScrollState(scrollState)
 
     Box(modifier.fillMaxWidth()) {
@@ -158,12 +185,13 @@ private fun TopBarContent(
                     )
                 }
             },
-            backgroundColor = Color.Black.copy(alpha = alphaPerScroll),
+            backgroundColor = MaterialTheme.colors.primary.copy(alpha = alphaPerScroll),
             elevation = 0.dp,
             navigationIcon = {
-                IconButton(onClick = onBackClick) {
-                    Icon(Icons.Default.ArrowBackIosNew, "Navigate back", tint = Color.White)
-                }
+                CircleIconButton(Icons.Default.ArrowBackIosNew, "Navigate back", onBackClick)
+            },
+            actions = {
+                CircleIconButton(Icons.Default.FavoriteBorder, "Add to favourites") {}
             },
             modifier = Modifier.align(Alignment.TopCenter),
         )
@@ -171,35 +199,174 @@ private fun TopBarContent(
 }
 
 @Composable
-private fun PostDetailContent(
+private fun CircleIconButton(icon: ImageVector, contentDescription: String, onClick: () -> Unit) {
+    IconButton(onClick = onClick) {
+        Box(
+            Modifier.size(36.dp).clip(RoundedCornerShape(50)).background(Color.Black.copy(alpha = 0.35f)),
+            contentAlignment = Alignment.Center,
+        ) {
+            Icon(icon, contentDescription, tint = Color.White, modifier = Modifier.size(18.dp))
+        }
+    }
+}
+
+@Composable
+private fun PostDetailBody(
     isLoading: Boolean,
     title: String,
     author: String,
     content: String,
+    meta: FoodMeta?,
     modifier: Modifier,
 ) {
-    Column(modifier, verticalArrangement = Arrangement.spacedBy(16.dp)) {
+    Column(modifier, verticalArrangement = Arrangement.spacedBy(14.dp)) {
         Text(
             text = title,
             style = MaterialTheme.typography.h5,
-            fontWeight = FontWeight.Bold,
             modifier = Modifier.fillMaxWidth().placeholder(isLoading, highlight = PlaceholderHighlight.shimmer()),
         )
+
+        if (meta != null) {
+            Text(
+                text = meta.cuisine,
+                style = MaterialTheme.typography.body2,
+                color = MaterialTheme.colors.onSurface.copy(alpha = 0.6f),
+            )
+
+            // Rating summary strip
+            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                RatingBadge(meta.rating)
+                Text(
+                    "${meta.ratingCount} ratings",
+                    style = MaterialTheme.typography.caption,
+                    color = MaterialTheme.colors.onSurface.copy(alpha = 0.6f),
+                )
+                if (meta.isPureVeg) {
+                    Text(
+                        "PURE VEG",
+                        style = MaterialTheme.typography.caption,
+                        fontWeight = FontWeight.Bold,
+                        color = RatingGreen,
+                    )
+                }
+            }
+
+            InfoStrip(meta)
+
+            meta.offer?.let { OfferBanner(it) }
+        }
+
         Text(
-            text = "~ $author",
-            style = MaterialTheme.typography.overline,
-            fontSize = 14.sp,
-            color = Color.DarkGray,
-            modifier = Modifier.requiredWidthIn(min = 120.dp).placeholder(isLoading, highlight = PlaceholderHighlight.shimmer()),
+            text = "About",
+            style = MaterialTheme.typography.h6,
+            modifier = Modifier.padding(top = 4.dp),
+        )
+        Text(
+            text = "~ by $author",
+            style = MaterialTheme.typography.caption,
+            color = PeptoOrange,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.placeholder(isLoading, highlight = PlaceholderHighlight.shimmer()),
         )
         Text(
             text = content,
             style = MaterialTheme.typography.body1,
-            fontFamily = FontFamily.Serif,
-            fontSize = 16.sp,
-            lineHeight = 24.sp,
-            modifier = Modifier.fillMaxWidth().requiredHeightIn(min = 240.dp).placeholder(isLoading, highlight = PlaceholderHighlight.shimmer()),
+            color = MaterialTheme.colors.onSurface.copy(alpha = 0.85f),
+            modifier = Modifier
+                .fillMaxWidth()
+                .placeholder(isLoading, highlight = PlaceholderHighlight.shimmer()),
         )
+    }
+}
+
+@Composable
+private fun InfoStrip(meta: FoodMeta) {
+    Surface(
+        shape = MaterialTheme.shapes.medium,
+        color = MaterialTheme.colors.surface,
+        border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colors.onSurface.copy(alpha = 0.08f)),
+        modifier = Modifier.fillMaxWidth(),
+    ) {
+        Row(
+            Modifier.fillMaxWidth().padding(vertical = 14.dp),
+            horizontalArrangement = Arrangement.SpaceEvenly,
+        ) {
+            InfoStripItem(Icons.Filled.Schedule, meta.deliveryTime, "Delivery")
+            Divider()
+            InfoStripItem(Icons.Filled.Place, meta.distance, "Distance")
+            Divider()
+            InfoStripItem(Icons.Filled.Payments, meta.priceForTwo.removePrefix("₹").substringBefore(" "), "₹ for two")
+        }
+    }
+}
+
+@Composable
+private fun Divider() {
+    Box(Modifier.width(1.dp).height(34.dp).background(MaterialTheme.colors.onSurface.copy(alpha = 0.10f)))
+}
+
+@Composable
+private fun InfoStripItem(icon: ImageVector, value: String, label: String) {
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        Icon(icon, contentDescription = null, tint = PeptoOrange, modifier = Modifier.size(20.dp))
+        Spacer(Modifier.height(4.dp))
+        Text(value, style = MaterialTheme.typography.subtitle2)
+        Text(
+            label,
+            style = MaterialTheme.typography.caption,
+            color = MaterialTheme.colors.onSurface.copy(alpha = 0.5f),
+        )
+    }
+}
+
+@Composable
+private fun OfferBanner(offer: String) {
+    Surface(
+        shape = MaterialTheme.shapes.small,
+        color = SaffronYellow.copy(alpha = 0.15f),
+        modifier = Modifier.fillMaxWidth(),
+    ) {
+        Row(
+            Modifier.padding(14.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(10.dp),
+        ) {
+            Icon(Icons.Filled.LocalOffer, contentDescription = null, tint = SaffronYellow, modifier = Modifier.size(20.dp))
+            Column {
+                Text(offer, style = MaterialTheme.typography.subtitle2, fontWeight = FontWeight.Bold)
+                Text(
+                    "Apply at checkout",
+                    style = MaterialTheme.typography.caption,
+                    color = MaterialTheme.colors.onSurface.copy(alpha = 0.6f),
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun AddToCartBar(price: String) {
+    Surface(elevation = 16.dp, color = MaterialTheme.colors.surface) {
+        Row(
+            Modifier.fillMaxWidth().padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(16.dp),
+        ) {
+            Column(Modifier.weight(1f)) {
+                Text("Total", style = MaterialTheme.typography.caption, color = MaterialTheme.colors.onSurface.copy(alpha = 0.6f))
+                Text(price.removeSuffix(" for two"), style = MaterialTheme.typography.h6)
+            }
+            Button(
+                onClick = { },
+                shape = MaterialTheme.shapes.small,
+                colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.primary),
+                contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 28.dp, vertical = 12.dp),
+            ) {
+                Icon(Icons.Filled.ShoppingCart, contentDescription = null, tint = Color.White, modifier = Modifier.size(18.dp))
+                Spacer(Modifier.width(8.dp))
+                Text("Add to cart", color = Color.White)
+            }
+        }
     }
 }
 
