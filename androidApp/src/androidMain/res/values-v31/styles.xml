@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Android 12+ uses the system splash screen API. Brand it red with the Pepto glyph. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:colorPrimary">@color/ic_launcher_background</item>
         <item name="android:colorPrimaryDark">@color/ic_launcher_background</item>
-        <!-- Branded launch screen (shown before Compose draws). -->
+        <item name="android:windowSplashScreenBackground">@color/ic_launcher_background</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_pepto_foreground</item>
         <item name="android:windowBackground">@drawable/splash_background</item>
     </style>
 </resources>

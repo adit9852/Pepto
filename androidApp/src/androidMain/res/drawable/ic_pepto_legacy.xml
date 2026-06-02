@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Self-contained launcher icon (red rounded background + white glyph) used as the
+     pre-API-26 fallback, where adaptive icons are unavailable. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#E23744"
+        android:pathData="M24,0L84,0Q108,0 108,24L108,84Q108,108 84,108L24,108Q0,108 0,84L0,24Q0,0 24,0Z" />
+    <group
+        android:translateX="26"
+        android:translateY="26"
+        android:scaleX="2.33"
+        android:scaleY="2.33">
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M11,9H9V2H7v7H5V2H3v7c0,2.12 1.66,3.84 3.75,3.97V22h2.5v-9.03C11.34,12.84 13,11.12 13,9V2h-2v7zM16,6v8h2.5v8H21V2c-2.76,0 -5,2.24 -5,4z" />
+    </group>
+</vector>

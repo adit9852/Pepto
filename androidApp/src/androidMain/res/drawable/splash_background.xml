@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Launch / splash window background: solid Pepto red with the centred logo glyph.
+     Shown on cold start (and as the window background on API < 31). -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/ic_launcher_background" />
+    <item
+        android:width="140dp"
+        android:height="140dp"
+        android:drawable="@drawable/ic_pepto_foreground"
+        android:gravity="center" />
+</layer-list>

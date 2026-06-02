@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "dev.adityakumar.pepto.androidApp-mergeDebugResources-47:/values-v31/values-v31.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Asus\\AndroidStudioProjects\\Foodium\\androidApp\\src\\androidMain\\res\\values-v31\\styles.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "150",
+                        "endLines": "9",
+                        "endColumns": "12",
+                        "endOffsets": "664"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "8",
+                        "endColumns": "12",
+                        "endOffsets": "569"
+                    }
+                }
+            ]
+        }
+    ]
+}
