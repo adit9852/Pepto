@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="480" viewBox="0 0 1280 480" fill="none" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#E23744"/>
+      <stop offset="1" stop-color="#FF7E5F"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background -->
+  <rect width="1280" height="480" fill="url(#bg)"/>
+
+  <!-- subtle decorative circles -->
+  <circle cx="1130" cy="90" r="220" fill="#FFFFFF" opacity="0.06"/>
+  <circle cx="1180" cy="420" r="150" fill="#FFFFFF" opacity="0.06"/>
+
+  <!-- logo badge -->
+  <rect x="140" y="150" width="150" height="150" rx="44" fill="#FFFFFF"/>
+  <g transform="translate(172,182) scale(3.6)" fill="#E23744">
+    <path d="M11,9H9V2H7v7H5V2H3v7c0,2.12 1.66,3.84 3.75,3.97V22h2.5v-9.03C11.34,12.84 13,11.12 13,9V2h-2v7zM16,6v8h2.5v8H21V2c-2.76,0 -5,2.24 -5,4z"/>
+  </g>
+
+  <!-- wordmark + taglines -->
+  <text x="330" y="225" fill="#FFFFFF" font-size="104" font-weight="800" letter-spacing="-3">Pepto</text>
+  <text x="334" y="288" fill="#FFFFFF" font-size="36" font-weight="600" opacity="0.95">Food delivery, reimagined.</text>
+  <text x="334" y="334" fill="#FFFFFF" font-size="24" font-weight="500" opacity="0.85">Kotlin Multiplatform · Compose Multiplatform · Android &amp; iOS</text>
+
+  <!-- platform chips -->
+  <g transform="translate(334,366)">
+    <rect x="0" y="0" width="132" height="40" rx="20" fill="#FFFFFF" opacity="0.18"/>
+    <text x="66" y="26" fill="#FFFFFF" font-size="18" font-weight="700" text-anchor="middle">ANDROID</text>
+    <rect x="148" y="0" width="92" height="40" rx="20" fill="#FFFFFF" opacity="0.18"/>
+    <text x="194" y="26" fill="#FFFFFF" font-size="18" font-weight="700" text-anchor="middle">iOS</text>
+  </g>
+</svg>
