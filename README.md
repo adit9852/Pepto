@@ -143,7 +143,7 @@ Questions, doubts or opinions? You're always welcome to
 ## 📄 License
 
 ```
-Copyright 2025 Aditya Kumar
+Copyright 2026 Aditya Kumar
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
