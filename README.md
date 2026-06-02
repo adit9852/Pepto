@@ -1,144 +1,146 @@
-![](/readme-media/graphic.svg)
+<p align="center">
+  <img src="readme-media/graphic.svg" alt="Pepto — Food delivery, reimagined. Kotlin Multiplatform · Compose · Android & iOS" width="100%"/>
+</p>
 
-# 🍲 Pepto (Kotlin Multiplatform Mobile)
+<h1 align="center">🍲 Pepto</h1>
 
-Pepto is a modern, aesthetic _food‑delivery_ sample app built to demonstrate the use of
-_**Kotlin Multiplatform Mobile**_ for developing _Android and iOS_ applications with a single,
-shared **Compose Multiplatform** UI 🚀.
+<p align="center">
+  A modern, aesthetic <b>food‑delivery</b> app built with <b>Kotlin Multiplatform</b> and a single,
+  shared <b>Compose Multiplatform</b> UI for <b>Android</b> &amp; <b>iOS</b>. 🚀
+</p>
 
-| Platforms | ![](https://img.shields.io/badge/Android-black.svg?style=for-the-badge&logo=android) ![](https://img.shields.io/badge/iOS-black.svg?style=for-the-badge&logo=apple)  |
-|-----------|---|
-| Status    | [![Build](https://github.com/adit9852/Foodium/actions/workflows/build.yml/badge.svg)](https://github.com/adit9852/Foodium/actions/workflows/build.yml)  |
+<p align="center">
+  <img src="https://img.shields.io/badge/Android-3DDC84.svg?style=for-the-badge&logo=android&logoColor=white"/>
+  <img src="https://img.shields.io/badge/iOS-000000.svg?style=for-the-badge&logo=apple&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Kotlin-7F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Jetpack%20Compose-4285F4.svg?style=for-the-badge&logo=jetpackcompose&logoColor=white"/>
+</p>
 
+---
 
-## About
+## ✨ About
 
-Pepto is a Zomato‑style food‑delivery front end with a clean, modern interface — a location
-header, search bar, food categories, a "Popular near you" carousel and restaurant cards with
-ratings, delivery times and prices. It loads data from an API and caches it in a local SQLite
-database, so content stays available offline and remote/local data are always synchronized.
+Pepto is a Zomato‑style food‑delivery front end with a clean, modern interface — a gradient
+location header, search bar, food categories, a "Popular near you" carousel and restaurant cards
+with ratings, delivery times and prices. It loads data from an API and caches it in a local
+SQLite database, so content stays available offline and remote/local data stay in sync.
 
-**Features:**
+**Features**
 
-- [x] Modern, aesthetic food‑delivery UI 🎨
-- [x] Single shared Compose UI across Android & iOS 📱
-- [x] Offline capability (SQLite cache) 📵
-- [x] Dark mode 🌓
-- [x] Pull‑to‑refresh & shimmer loading ✨
+- 🎨 Modern, aesthetic food‑delivery UI (Zomato‑style)
+- 📱 One shared Compose UI across Android &amp; iOS
+- 📵 Offline capability (SQLite cache)
+- 🌓 Dark mode
+- ✨ Pull‑to‑refresh &amp; shimmer loading
 
-The network API is a dummy (fixed) response which is _statically hosted
-[here](https://adit9852.github.io/DummyFoodiumApi/api/posts/)_.
+> The network API is a dummy (fixed) response, statically hosted
+> [here](https://adit9852.github.io/DummyFoodiumApi/api/posts/).
 
-### 📱 Preview
+## 📱 Preview
 
-Here's how Pepto looks on both platforms:
+Pepto runs from the **same Compose codebase** on both platforms. Here's the home feed on Android
+and the restaurant detail screen on iOS:
 
-#### 📸 Screenshots
-
-<!--
-  Add your screenshots to the `readme-media/` folder and keep these file names
-  (or update the paths below). Recommended: a portrait screenshot ~1080px wide.
--->
-<table>
+<table align="center">
   <tr>
-    <th>Android</th>
-    <th>iOS</th>
+    <td align="center"><b>Android</b><br/><sub>Home feed</sub></td>
+    <td align="center"><b>iOS</b><br/><sub>Restaurant detail</sub></td>
   </tr>
   <tr>
-    <td><img src="readme-media/pepto-android.png" width="280" alt="Pepto on Android"/></td>
-    <td><img src="readme-media/pepto-ios.png" width="280" alt="Pepto on iOS"/></td>
+    <td><img src="readme-media/pepto-android.svg" width="300" alt="Pepto home screen on Android"/></td>
+    <td><img src="readme-media/pepto-ios.svg" width="300" alt="Pepto detail screen on iOS"/></td>
   </tr>
 </table>
 
-#### ▶️ Android
+> 💡 The images above are crafted mockups of the actual screens. To swap in **real screenshots**
+> or an inline **demo video**, see [Adding your own demo media](#-adding-your-own-demo-media).
+
+### ▶️ Demo video
 
 <!--
-  Paste your Android demo VIDEO link on the line below.
-  See "Adding your own demo media" at the bottom for how to get a GitHub video URL.
+  Record the app, then drag-and-drop the video into any github.com comment / PR / the README editor.
+  GitHub uploads it and gives you a `https://user-images.githubusercontent.com/...mp4` link.
+  Paste that link on its own line right here and GitHub will render an inline player.
 -->
-_Add your Android demo video here._
-
-#### ▶️ iOS
-
-<!-- Paste your iOS demo VIDEO link on the line below. -->
-_Add your iOS demo video here._
+_Add your Android / iOS demo video here — see the guide below._
 
 ---
 
-## Built with
+## 🛠️ Built with
 
-- [Kotlin](https://kotlinlang.org): Programming language
-- [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html): For building multi-platform applications in a single codebase.
-- [Jetpack/JetBrains Compose Multiplatform](https://www.jetbrains.com/lp/compose-multiplatform/): For a shared UI between Android and iOS.
-- Kotlinx
-  - [Coroutines](https://github.com/Kotlin/kotlinx.coroutines): For multithreading
-  - [Serialization](https://github.com/Kotlin/kotlinx.serialization): For JSON serialization/deserialization
-- [Ktor Client](https://github.com/ktorio/ktor): Performing HTTP requests; image loading utility for the iOS module.
-- [SQLDelight](https://github.com/cashapp/sqldelight): For persisting data in the local database
-- [Coil](https://github.com/coil-kt/coil): Image loading for Android
-- [Mutekt](https://github.com/patilshreyas/mutekt): For UI state management
+- [Kotlin](https://kotlinlang.org) — Programming language
+- [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html) — Multi‑platform apps from a single codebase
+- [Compose Multiplatform](https://www.jetbrains.com/lp/compose-multiplatform/) — Shared UI for Android &amp; iOS
+- [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) — Multithreading
+- [Kotlinx Serialization](https://github.com/Kotlin/kotlinx.serialization) — JSON serialization/deserialization
+- [Ktor Client](https://github.com/ktorio/ktor) — HTTP requests &amp; iOS image loading
+- [SQLDelight](https://github.com/cashapp/sqldelight) — Local database / offline cache
+- [Coil](https://github.com/coil-kt/coil) — Image loading on Android
+- [Mutekt](https://github.com/patilshreyas/mutekt) — UI state management
 
-## Setting up project 👨🏻‍💻
+## 🚀 Setting up the project
 
-- Refer to the ***"Setting up environment"*** section of [this repository](https://github.com/JetBrains/compose-multiplatform-ios-android-template/blob/main/README.md)
-for the setup guidelines.
-- After validating requirements as per the above guide, clone this repository.
-- Open this project in Android Studio (Electric Eel or newer).
+- Refer to the **"Setting up environment"** section of the
+  [Compose Multiplatform template](https://github.com/JetBrains/compose-multiplatform-ios-android-template/blob/main/README.md).
+- Clone this repository and open it in **Android Studio** (Electric Eel or newer).
 - Build the project 🔨 and confirm everything works.
-- Run the app
-  - Select **"androidApp"** as the run configuration to run the Android app.
-  - Select **"iosApp"** as the run configuration to run the iOS app _(Xcode can also be used)_.
+- Run the app:
+  - Select **`androidApp`** as the run configuration → run the **Android** app.
+  - Select **`iosApp`** (or use **Xcode**) → run the **iOS** app.
 
-## Project structure
+## 🗂️ Project structure
 
 This Compose Multiplatform project includes three modules:
 
-### [`shared`](/shared)
-A Kotlin module containing the logic common to both Android and iOS — the code you share between platforms.
-This is also where the Compose Multiplatform UI lives. In `shared/src/commonMain/kotlin/App.kt` you'll find the shared root `@Composable` function for the app.
-It uses Gradle as the build system; add dependencies and change settings in `shared/build.gradle.kts`. The shared module builds into an Android library and an iOS framework.
-
-### [`androidApp`](/androidApp)
-A Kotlin module that builds into an Android application. It depends on and uses the shared module as a regular Android library.
-
-### [`iosApp`](/iosApp)
-An Xcode project that builds into an iOS application. It depends on and uses the shared module as a CocoaPods dependency.
+| Module | Description |
+|--------|-------------|
+| [`shared`](/shared) | Kotlin module with all shared logic **and** the shared Compose UI. The app's root `@Composable` lives in `shared/src/commonMain/kotlin/App.kt`. Builds into an Android library and an iOS framework. |
+| [`androidApp`](/androidApp) | Builds the Android application; depends on `shared` as a regular Android library. |
+| [`iosApp`](/iosApp) | Xcode project that builds the iOS application; depends on `shared` as a CocoaPods dependency. |
 
 ---
 
-## Adding your own demo media 🎥
+## 🎥 Adding your own demo media
 
-This README is designed to show a hero banner plus an Android and iOS demo — here's how to fill it in:
+Want real captures instead of (or alongside) the mockups? Here's the full recipe.
 
-**Hero banner (the "front photo"):**
-- The banner at the top is [`readme-media/graphic.svg`](/readme-media/graphic.svg). Edit it directly, or replace the line `![](/readme-media/graphic.svg)` with your own image (e.g. `![](/readme-media/graphic.png)`).
+**Hero banner (the front image):**
+- It's [`readme-media/graphic.svg`](/readme-media/graphic.svg) — edit the text/colours directly, or
+  replace the `<img src="readme-media/graphic.svg" .../>` line at the top with your own image.
 
 **Screenshots:**
-1. **Android:** run the app, then capture with `adb exec-out screencap -p > readme-media/pepto-android.png`.
-2. **iOS:** run on a Simulator, then `Cmd+S` (or `xcrun simctl io booted screenshot readme-media/pepto-ios.png`).
 
-**Demo videos (the part that actually *plays* in the README):**
-- Record the screen — Android: `adb shell screenrecord /sdcard/demo.mp4` (then `adb pull`); iOS Simulator: `xcrun simctl io booted recordVideo demo.mov`.
-- GitHub does **not** play repo-hosted `.mp4` files inline. Instead, open any issue / pull request / the README editor on **github.com**, **drag‑and‑drop your video** into the text box, and GitHub uploads it and inserts a `https://user-images.githubusercontent.com/…​.mp4` link.
-- Copy that link and paste it on its own line under the **▶️ Android** / **▶️ iOS** headings (replacing the `_Add your … video here._` placeholder). GitHub renders it as an inline video player. 🎬
+| Platform | Capture command |
+|----------|-----------------|
+| Android  | `adb exec-out screencap -p > readme-media/pepto-android.png` |
+| iOS (Simulator) | `xcrun simctl io booted screenshot readme-media/pepto-ios.png` |
 
-## Contribute
+Then point the `<img>` tags in the **Preview** table at your new `.png` files.
 
-If you want to contribute, you're always welcome!
-See [Contributing Guidelines](CONTRIBUTING.md).
+**Demo video (this is what *plays* inline):**
+1. Record the screen
+   - Android: `adb shell screenrecord /sdcard/demo.mp4` → `adb pull /sdcard/demo.mp4`
+   - iOS Simulator: `xcrun simctl io booted recordVideo demo.mov`
+2. GitHub does **not** play repo‑hosted `.mp4` files inline. Instead, open any **issue / PR / the
+   README editor on github.com** and **drag‑and‑drop** your video into the text box.
+3. GitHub uploads it and inserts a `https://user-images.githubusercontent.com/…​.mp4` link — paste
+   that under **▶️ Demo video** and it renders as an inline player. 🎬
 
-## Discuss 💬
+## 🤝 Contribute
 
-Have any questions, doubts or want to present your opinions/views? You're always welcome.
-You can [start discussions](https://github.com/adit9852/Foodium-KMM/discussions).
+Contributions are always welcome! See [Contributing Guidelines](CONTRIBUTING.md).
 
-## Acknowledgements
+## 💬 Discuss
 
-- [JetBrains/compose-multiplatform-ios-android-template](https://github.com/JetBrains/compose-multiplatform-ios-android-template#readme):
-  Starter template
-- [google/accompanist](https://github.com/google/accompanist): For the placeholder (shimmer animation) APIs
+Questions, doubts or opinions? You're always welcome to
+[start a discussion](https://github.com/adit9852/Foodium-KMM/discussions).
 
-## License
+## 🙏 Acknowledgements
+
+- [JetBrains/compose-multiplatform-ios-android-template](https://github.com/JetBrains/compose-multiplatform-ios-android-template#readme) — Starter template
+- [google/accompanist](https://github.com/google/accompanist) — Placeholder (shimmer) APIs
+
+## 📄 License
 
 ```
 Copyright 2025 Aditya Kumar
