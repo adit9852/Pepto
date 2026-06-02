@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "dev.shreyaspatil.foodium.androidApp-mergeDebugResources-47:/values-gl/values-gl.xml",
+            "outputFile": "dev.adityakumar.pepto.androidApp-mergeDebugResources-47:/values-gl/values-gl.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Asus\\.gradle\\caches\\transforms-3\\21843fb5584fbe4d5120b3161d2764ec\\transformed\\ui-1.4.3\\res\\values-gl\\values-gl.xml",

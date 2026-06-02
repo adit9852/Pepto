@@ -97,7 +97,7 @@ kotlin {
 sqldelight {
     databases {
         create("PeptoDb") {
-            packageName.set("dev.shreyaspatil.pepto.db")
+            packageName.set("dev.adityakumar.pepto.db")
         }
     }
 }

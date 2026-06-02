@@ -17,12 +17,12 @@ kotlin {
 
 android {
     compileSdk = (findProperty("android.compileSdk") as String).toInt()
-    namespace = "dev.shreyaspatil.pepto"
+    namespace = "dev.adityakumar.pepto"
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
 
     defaultConfig {
-        applicationId = "dev.shreyaspatil.pepto"
+        applicationId = "dev.adityakumar.pepto"
         minSdk = (findProperty("android.minSdk") as String).toInt()
         targetSdk = (findProperty("android.targetSdk") as String).toInt()
         versionCode = 1

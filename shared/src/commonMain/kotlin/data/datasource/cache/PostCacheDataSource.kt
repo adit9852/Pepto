@@ -1,5 +1,5 @@
 /**
- * Copyright 2023 Shreyas Patil
+ * Copyright 2023 Aditya Kumar
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,8 +18,8 @@ package data.datasource.cache
 import app.cash.sqldelight.coroutines.asFlow
 import app.cash.sqldelight.coroutines.mapToList
 import data.model.Post
-import dev.shreyaspatil.pepto.db.PeptoDb
-import dev.shreyaspatil.pepto.db.Posts
+import dev.adityakumar.pepto.db.PeptoDb
+import dev.adityakumar.pepto.db.Posts
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map

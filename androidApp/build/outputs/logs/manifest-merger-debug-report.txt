@@ -117,8 +117,8 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\As
 	android:theme
 		ADDED from C:\Users\Asus\AndroidStudioProjects\Foodium\androidApp\src\androidMain\AndroidManifest.xml:12:9-40
 	android:name
-		ADDED from C:\Users\Asus\AndroidStudioProjects\Foodium\androidApp\src\androidMain\AndroidManifest.xml:6:9-35
-activity#dev.shreyaspatil.foodium.MainActivity
+		ADDED from C:\Users\Asus\AndroidStudioProjects\Foodium\androidApp\src\androidMain\AndroidManifest.xml:6:9-33
+activity#dev.adityakumar.pepto.MainActivity
 ADDED from C:\Users\Asus\AndroidStudioProjects\Foodium\androidApp\src\androidMain\AndroidManifest.xml:13:9-21:20
 	android:exported
 		ADDED from C:\Users\Asus\AndroidStudioProjects\Foodium\androidApp\src\androidMain\AndroidManifest.xml:14:13-36
@@ -310,7 +310,7 @@ ADDED from [androidx.core:core:1.10.1] C:\Users\Asus\.gradle\caches\transforms-3
 		ADDED from [androidx.core:core:1.10.1] C:\Users\Asus\.gradle\caches\transforms-3\d831eb3557a8a4f68d838b53d4883308\transformed\core-1.10.1\AndroidManifest.xml:24:9-44
 	android:name
 		ADDED from [androidx.core:core:1.10.1] C:\Users\Asus\.gradle\caches\transforms-3\d831eb3557a8a4f68d838b53d4883308\transformed\core-1.10.1\AndroidManifest.xml:23:9-81
-permission#dev.shreyaspatil.foodium.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+permission#dev.adityakumar.pepto.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.10.1] C:\Users\Asus\.gradle\caches\transforms-3\d831eb3557a8a4f68d838b53d4883308\transformed\core-1.10.1\AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
 		ADDED from [androidx.core:core:1.10.1] C:\Users\Asus\.gradle\caches\transforms-3\d831eb3557a8a4f68d838b53d4883308\transformed\core-1.10.1\AndroidManifest.xml:24:9-44
@@ -320,7 +320,7 @@ uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.10.1] C:\Users\Asus\.gradle\caches\transforms-3\d831eb3557a8a4f68d838b53d4883308\transformed\core-1.10.1\AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.10.1] C:\Users\Asus\.gradle\caches\transforms-3\d831eb3557a8a4f68d838b53d4883308\transformed\core-1.10.1\AndroidManifest.xml:26:22-94
-uses-permission#dev.shreyaspatil.foodium.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+uses-permission#dev.adityakumar.pepto.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.10.1] C:\Users\Asus\.gradle\caches\transforms-3\d831eb3557a8a4f68d838b53d4883308\transformed\core-1.10.1\AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.10.1] C:\Users\Asus\.gradle\caches\transforms-3\d831eb3557a8a4f68d838b53d4883308\transformed\core-1.10.1\AndroidManifest.xml:26:22-94

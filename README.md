@@ -1,8 +1,8 @@
 ![](/readme-media/graphic.png)
 
-# 🍲 Foodium (Kotlin Multiplatform Mobile)
+# 🍲 Pepto (Kotlin Multiplatform Mobile)
 
-Foodium is a simple and sample _mobile application_ built to demonstrate the use of
+Pepto is a simple and sample _mobile application_ built to demonstrate the use of
 _**Kotlin Multiplatform Mobile**_ for developing _Android and iOS_ applications
 using **Jetpack Compose** 🚀.
 

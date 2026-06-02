@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "dev.shreyaspatil.foodium.androidApp-mergeDebugResources-47:/values-large-v4/values-large-v4.xml",
+            "outputFile": "dev.adityakumar.pepto.androidApp-mergeDebugResources-47:/values-large-v4/values-large-v4.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Asus\\.gradle\\caches\\transforms-3\\fe9a0d0df1402c4cc2d9064b099c74d1\\transformed\\appcompat-1.6.1\\res\\values-large-v4\\values-large-v4.xml",

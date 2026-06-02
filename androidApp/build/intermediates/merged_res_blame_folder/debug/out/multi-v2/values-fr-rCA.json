@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "dev.shreyaspatil.foodium.androidApp-mergeDebugResources-47:/values-fr-rCA/values-fr-rCA.xml",
+            "outputFile": "dev.adityakumar.pepto.androidApp-mergeDebugResources-47:/values-fr-rCA/values-fr-rCA.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Asus\\.gradle\\caches\\transforms-3\\21843fb5584fbe4d5120b3161d2764ec\\transformed\\ui-1.4.3\\res\\values-fr-rCA\\values-fr-rCA.xml",

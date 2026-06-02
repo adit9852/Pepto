@@ -1,5 +1,5 @@
 /**
- * Copyright 2023 Shreyas Patil
+ * Copyright 2023 Aditya Kumar
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,6 +76,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ui.component.ErrorContent
+import ui.component.PeptoLogo
 import ui.component.PopularCard
 import ui.component.PostCard
 import ui.theme.PeptoOrange
@@ -210,29 +211,15 @@ private fun PostListContent(
 
 @Composable
 private fun LocationHeader() {
-    Box(
+    Column(
         Modifier
             .fillMaxWidth()
-            .background(Brush.verticalGradient(listOf(PeptoRed, PeptoOrange))),
+            .background(Brush.verticalGradient(listOf(PeptoRed, PeptoOrange)))
+            .padding(horizontal = 16.dp, vertical = 14.dp),
     ) {
-        Row(
-            Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 14.dp),
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            Icon(Icons.Filled.Place, contentDescription = null, tint = Color.White, modifier = Modifier.size(22.dp))
-            Spacer(Modifier.width(8.dp))
-            Column(Modifier.weight(1f)) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text("Deliver to", color = Color.White.copy(alpha = 0.85f), fontSize = 12.sp)
-                    Icon(Icons.Filled.KeyboardArrowDown, null, tint = Color.White, modifier = Modifier.size(16.dp))
-                }
-                Text(
-                    "Home • Koramangala, Bengaluru",
-                    color = Color.White,
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 15.sp,
-                )
-            }
+        // Brand row: Pepto logo + theme toggle + profile
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            PeptoLogo(modifier = Modifier.weight(1f))
 
             val controller = LocalUiModePreferenceController.current
             val uiMode by rememberUiMode()
@@ -248,6 +235,26 @@ private fun LocationHeader() {
                 contentAlignment = Alignment.Center,
             ) {
                 Icon(Icons.Filled.Person, contentDescription = "Profile", tint = Color.White)
+            }
+        }
+
+        Spacer(Modifier.height(12.dp))
+
+        // Location row
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Icon(Icons.Filled.Place, contentDescription = null, tint = Color.White, modifier = Modifier.size(22.dp))
+            Spacer(Modifier.width(8.dp))
+            Column(Modifier.weight(1f)) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text("Deliver to", color = Color.White.copy(alpha = 0.85f), fontSize = 12.sp)
+                    Icon(Icons.Filled.KeyboardArrowDown, null, tint = Color.White, modifier = Modifier.size(16.dp))
+                }
+                Text(
+                    "Home • Koramangala, Bengaluru",
+                    color = Color.White,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 15.sp,
+                )
             }
         }
     }

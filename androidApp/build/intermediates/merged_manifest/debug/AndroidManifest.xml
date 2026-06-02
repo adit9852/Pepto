@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="dev.shreyaspatil.foodium"
+    package="dev.adityakumar.pepto"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -11,13 +11,13 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <permission
-        android:name="dev.shreyaspatil.foodium.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="dev.adityakumar.pepto.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="dev.shreyaspatil.foodium.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="dev.adityakumar.pepto.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
-        android:name="dev.shreyaspatil.foodium.FoodiumApp"
+        android:name="dev.adityakumar.pepto.PeptoApp"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
@@ -29,7 +29,7 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="dev.shreyaspatil.foodium.MainActivity"
+            android:name="dev.adityakumar.pepto.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,7 +40,7 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="dev.shreyaspatil.foodium.androidx-startup"
+            android:authorities="dev.adityakumar.pepto.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"
